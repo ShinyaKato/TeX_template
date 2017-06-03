@@ -4,6 +4,11 @@
 \setlength {\textheight} {42\baselineskip }
 \setlength {\textwidth} {45zw }
 
+% セクションタイトルの文字の大きさを本文に合わせる
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+
 % 図番号などを"fig"ではなく"図"にする
 \renewcommand{\figurename}{図}
 \renewcommand{\tablename}{表}
