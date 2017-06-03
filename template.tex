@@ -1,0 +1,57 @@
+\documentclass{jarticle}
+
+\usepackage[margin=1in]{geometry}
+\setlength {\textheight} {42\baselineskip }
+\setlength {\textwidth} {45zw }
+
+% 図番号などを"fig"ではなく"図"にする
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+
+% 段落始めを字下げするやつ
+\usepackage{indentfirst}
+
+% 数式で場合分けするときとかのため
+\usepackage{amsmath}
+
+% 図番号などを{セクション番号}.{図番号}にする.
+\makeatletter
+\renewcommand{\thefigure}{
+\thesection.\arabic{figure}}
+\@addtoreset{figure}{section}
+\renewcommand{\thetable}{
+\thesection.\arabic{table}}
+\@addtoreset{table}{section}
+\renewcommand{\theequation}{
+\thesection.\arabic{equation}}
+\@addtoreset{equation}{section}
+
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\@addtoreset{figure}{section}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\@addtoreset{equation}{section}
+\renewcommand{\thetable}{\arabic{section}.\arabic{equation}}
+\@addtoreset{table}{section}
+\makeatother
+
+\usepackage{float}
+\usepackage{listings}
+\makeatother
+
+% ページ番号を実験風に変更
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
+
+\begin{document}
+
+This is TeX template.
+
+\end{document}
