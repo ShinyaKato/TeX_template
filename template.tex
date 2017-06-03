@@ -9,6 +9,9 @@
 \titleformat*{\section}{\normalsize\bfseries}
 \titleformat*{\subsection}{\normalsize\bfseries}
 
+% 図の描画
+\usepackage[dvipdfmx]{graphicx}
+
 % 図番号などを"fig"ではなく"図"にする
 \renewcommand{\figurename}{図}
 \renewcommand{\tablename}{表}
@@ -58,5 +61,12 @@
 \begin{document}
 
 This is TeX template.
+
+% Graphics Sample
+% \begin{figure}[htbp]
+%   \centering
+%     \includegraphics[keepaspectratio,scale=0.5]{image.png}
+% \end{figure}
+
 
 \end{document}
