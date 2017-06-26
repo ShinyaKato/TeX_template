@@ -13,13 +13,18 @@
 
 % 図, 表, 式番号のつけ方
 % TODO 図表式番号を一括で振る
-\usepackage{amsmath}
 \makeatletter
-  \def\thefigure{\thesection.\arabic{figure}}
+  \let\c@table\c@figure
+  \let\p@table\p@figure
+  \let\cl@table\cl@figure
+  \let\c@equation\c@table
+  \let\p@equation\p@table
+  \let\cl@equation\cl@table
+  \renewcommand{\thefigure}{\thesection.\arabic{figure}}
   \@addtoreset{figure}{section}
-  \renewcommand{\thetable}{\arabic{section}.\arabic{table}}
-  \renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+  \renewcommand{\thetable}{\thesection.\arabic{table}}
   \@addtoreset{table}{section}
+  \renewcommand{\theequation}{\thesection.\arabic{equation}}
   \@addtoreset{equation}{section}
 \makeatother
 
@@ -55,11 +60,10 @@
 図\ref{chart1}みたいな感じ.
 
 \begin{figure}[htb]
-  \begin{center}
+  \centering
     \includegraphics[keepaspectratio, scale=1.0]{chart1.png}
     \caption{キャプション}
     \label{chart1}
-  \end{center}
 \end{figure}
 
 \subsection{表の挿入}
@@ -68,7 +72,7 @@
 表\ref{table1}みたいな感じ.
 
 \begin{table}[htb]
-  \begin{center}
+  \centering
     \caption{キャプション}
     \label{table1}
     \begin{tabular}{c|c|c}
@@ -79,8 +83,13 @@
       BBB & DDDDD & FFFFF \\
       \hline
     \end{tabular}
-  \end{center}
 \end{table}
+
+\subsection{数式の挿入}
+
+\begin{equation}
+  y = x^2
+\end{equation}
 
 \subsection{プログラムの挿入}
 
