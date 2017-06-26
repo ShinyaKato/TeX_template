@@ -1,4 +1,4 @@
-\documentclass{jarticle}
+\documentclass[a4paper]{jarticle}
 
 % 余白の設定
 \usepackage[top=30truemm, bottom=30truemm, left=25truemm, right=25truemm]{geometry}
@@ -13,6 +13,7 @@
 
 % 図, 表, 式番号のつけ方
 % TODO 図表式番号を一括で振る
+\usepackage{amsmath}
 \makeatletter
   \def\thefigure{\thesection.\arabic{figure}}
   \@addtoreset{figure}{section}
